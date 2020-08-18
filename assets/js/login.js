@@ -33,7 +33,7 @@ $('#form_reg').on('submit', function (e) {
     }
     $.ajax({
         method: 'post',
-        url: 'http://ajax.frontend.itheima.net/api/reguser',
+        url: '/api/reguser',
         data: datas,
         success: function (res) {
             if (res.status !== 0) {
@@ -52,7 +52,7 @@ $('#form_login').on('submit', function (e) {
     console.log($(this).serialize());
     $.ajax({
         method: 'post',
-        url: 'http://ajax.frontend.itheima.net/api/login',
+        url: '/api/login',
         data: $(this).serialize(),
         success: function (res) {
             if (res.status !== 0) {
