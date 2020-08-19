@@ -1,20 +1,15 @@
-(function () {
 
+
+$(function () {
     getuser()
     $('#Exits').on('click', function (e) {
         e.preventDefault()
-        layui.layer.confirm('是否退出', { icon: 2, title: '提示' }, function (index) {
-            //do something
-            // 1.清除缓存
-            localStorage.removeItem('token')
-            // 2.跳转页面
-            location.href = '/login.html'
-            layui.layer.close(index);
-        });
-
+        layui.layer.confirm('是否退出', { icon: 2, title: '提示' }, retlogin
+        );
 
     })
-})()
+})
+
 // 获取用户信息
 function getuser() {
     $.ajax({
@@ -43,4 +38,13 @@ function renderAvatar(data) {
         $('.text-avatar').html(name[0].toUpperCase()).show()
     }
 
+}
+
+function retlogin(index) {
+    //do something
+    // 1.清除缓存
+    localStorage.removeItem('token')
+    // 2.跳转页面
+    location.href = '/login.html'
+    layui.layer.close(index);
 }

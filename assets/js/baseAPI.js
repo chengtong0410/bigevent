@@ -10,10 +10,10 @@ $.ajaxPrefilter(function (options) {
         if (res.responseJSON.status === 1 && res.responseJSON.message === "身份认证失败！") {
             localStorage.removeItem('token')
             document.body.style.filter = 'grayscale(100%)'
-            var index = layui.layer.load(2, { time: 10000 });
-            // setTimeout(function () {
-            //     location.href = '/login.html'
-            // }, 3000)
+            layui.layer.load(2, { time: 3000 });
+            setTimeout(function () {
+                location.href = '/login.html'
+            }, 3000)
         }
     }
 
