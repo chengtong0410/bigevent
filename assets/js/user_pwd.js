@@ -14,11 +14,8 @@ $(function () {
             }
         },
     })
-    $('#resetBtn').on('click', function (e) {
-        e.preventDefault()
-        $('.layui-form')[0].reset()
-    })
-    $('.layui-btn').on('click', function (e) {
+
+    $('.changePwd').on('click', function (e) {
         e.preventDefault()
         $.ajax({
             method: 'POST',
